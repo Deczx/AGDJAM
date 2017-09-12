@@ -30,24 +30,25 @@ public class SoundRing : MonoBehaviour {
         renderMaterial.EnableKeyword("_ALPHABLEND_ON");
         renderMaterial.EnableKeyword("_NORMALMAP");
         renderMaterial.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+        circleCollider.radius = 0.1f;
         currentRadius = 0.1f;
         expandRate = maxRadius / lifeSpan;
-	}
+        renderMaterial.SetFloat("_Radius", currentRadius);
+        circleCollider.radius = currentRadius;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         
         currentRadius += expandRate * Time.deltaTime;
         renderMaterial.SetFloat("_Radius", currentRadius);
+        circleCollider.radius = currentRadius;
 
 
-        if (currentRadius > maxRadius) {
+        if (currentRadius > maxRadius)
+        {
             Destroy(this.gameObject);
         }
-       
-
-
-
 
     }
 }

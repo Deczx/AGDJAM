@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4708569728603130}
   - component: {fileID: 33262340469604302}
-  - component: {fileID: 64523794580924130}
   - component: {fileID: 23208914803951598}
   - component: {fileID: 114222246791801702}
+  - component: {fileID: 58245388920845892}
   m_Layer: 0
   m_Name: Wave
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,20 +82,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564118406278054}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &64523794580924130
-MeshCollider:
+--- !u!58 &58245388920845892
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564118406278054}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Convex: 1
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  m_Radius: 0.1
 --- !u!114 &114222246791801702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ringColor: {r: 1, g: 0, b: 0, a: 0}
   thickness: 0.002
-  maxRadius: 0.286
+  maxRadius: 0.4
   antiAlias: 4
-  lifeSpan: 1.5
+  lifeSpan: 1
